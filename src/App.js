@@ -43,17 +43,17 @@ function App()
               headers: {
                 "Content-Type": "application/json",
               },
-              body: {
+              body: JSON.stringify({
                 "qty" : HW1Field,
                 "proj" : "project 1",
                 "hwset" : "1"
-              }
+              })
             })
               .then((res) => res.json())
               .then((data) => {
                 if (data.success) {
                   alert("Successfully checked out.");
-                  setHW1Out(data.qty)
+                  setHW1Out(data.amount)
                 }
               })
               console.log(HW1Field)
@@ -87,17 +87,17 @@ function App()
               headers: {
                 "Content-Type": "application/json",
               },
-              body: {
+              body: JSON.stringify({
                 "qty" : HW2Field,
                 "proj" : "project 1",
                 "hwset" : "2"
-              }
+              })
             })
               .then((res) => res.json())
               .then((data) => {
                 if (data.success) {
                   alert("Successfully checked out.");
-                  setHW2Out(data.qty)
+                  setHW2Out(data.amount)
                 }
               })
             }}>

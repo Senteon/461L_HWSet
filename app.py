@@ -28,13 +28,13 @@ def checkout():
         return {"success" : False}
 
     if (data.get("hwset") == "1"):
-        res = HWSet1.check_out(data.get("qty"))
+        res = HWSet1.check_out(int(data.get("qty")))
         if (res == -1):
             return {"success" : False}
         else:
             return {"success" : True, "amount" : data.get("qty")}
     elif (data.get("hwset") == "2"):
-        res = HWSet2.check_out(data.get("qty"))
+        res = HWSet2.check_out(int(data.get("qty")))
         if (res == -1):
             return {"success" : False}
         else:
