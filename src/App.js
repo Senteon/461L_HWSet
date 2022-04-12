@@ -56,6 +56,7 @@ function App()
                   setHW1Out(data.qty)
                 }
               })
+              console.log(HW1Field)
             }}>
             Check Out
           </Button>
